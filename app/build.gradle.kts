@@ -42,11 +42,11 @@ android {
 dependencies {
     implementation(Dependencies.ANDROIDX_CORE)
     implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
     implementation(Dependencies.ANDROIDX_UI)
     implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
     implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
     implementation(Dependencies.ANDROIDX_MATERIAL3)
-    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
     testImplementation(TestDependencies.ANDROIDX_JUNIT)
     androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
     androidTestImplementation(TestDependencies.ANDROIDX_ESPRESSO_CORE)
