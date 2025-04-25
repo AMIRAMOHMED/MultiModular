@@ -17,15 +17,18 @@ android {
         versionName = ReleaseConfig.VERSION_NAME
         testInstrumentationRunner = TestBuildConfig.TEST_INSTRUMENTATION_RUNNER
     }
+
     signingConfigs {
-        BuildSigning.Debug(project).create(this)
         BuildSigning.Release(project).create(this)
         BuildSigning.ReleaseExternalQa(project).create(this)
+        BuildSigning.Debug(project).create(this)
     }
+
     buildTypes {
         BuildCreator.Release(project).create(this).apply {
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName(SigningTypes.RELEASE)
         }
@@ -36,14 +39,9 @@ android {
             signingConfig = signingConfigs.getByName(SigningTypes.RELEASE_EXTERNAL_QA)
         }
     }
+    flavorDimensions.add(BuildDimensions.APP)
+    flavorDimensions.add(BuildDimensions.STORE)
 
-
-    flavorDimensions.add(
-        BuildDimensions.APP
-    )
-    flavorDimensions.add(
-        BuildDimensions.STORE
-    )
     productFlavors {
         BuildFlavor.Google.create(this)
         BuildFlavor.Huawei.create(this)
