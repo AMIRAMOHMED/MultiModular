@@ -6,13 +6,13 @@ id (BuildPlugins.ANDROID_APPLICATION)
 
 
 android {
-    namespace = "com.learnin.multimodular"
-    compileSdk = 35
+    namespace = BuildConfig.APP_ID
+    compileSdk = BuildConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.learnin.multimodular"
-        minSdk = 24
-        targetSdk = 35
+        applicationId = BuildConfig.APP_ID
+        minSdk = BuildConfig.MIN_SDK_VERSION
+        targetSdk = BuildConfig.TARGET_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
 
